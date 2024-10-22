@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://imgmedia.larepublica.pe/640x371/larepublica/migration/images/QLS36L7N7JESTCZCAUQSQF4CPQ.webp');
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 3em;
+  animation: fadeIn 1s ease-in;
+}
+
+.search-bar {
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar input {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar button {
+  padding: 15px 25px;
+  font-size: 18px;
+  background-color: #FF5722;
+  color: white;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-bar button:disabled {
+  background-color: #FFCCBC;
+  cursor: not-allowed;
+}
+
+.search-bar button:hover:not(:disabled) {
+  background-color: #E64A19;
+  transform: translateY(-2px);
+}
+
+.search-bar .suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 2px solid #FF5722;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  max-height: 120px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.search-bar .suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-bar .suggestion-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mensajes de carga y error */
+.loading {
+  margin-top: 10px;
+  color: #FF5722;
+}
+
+.error {
+  margin-top: 10px;
+  color: #F44336;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.pokemon-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: fadeIn 0.5s ease-in;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-card img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover img {
+  transform: rotate(5deg);
+}
+
+.pokemon-card h3 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  animation: scaleIn 0.3s ease-in;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+.search-result {
+  width: 100%;
+  text-align: center;
+}
+
+.search-result h2 {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
